@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 20% 8%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 20% 8%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 160 100% 50%;
+    --primary-foreground: 220 20% 4%;
+
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 180 100% 90%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 195 100% 50%;
+    --accent-foreground: 220 20% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 160 40% 20%;
+    --input: 220 20% 15%;
+    --ring: 160 100% 50%;
+
+    --radius: 0.75rem;
+
+    --neon-green: 160 100% 50%;
+    --neon-cyan: 195 100% 50%;
+    --neon-purple: 270 100% 65%;
+    --glass: 220 20% 10%;
+    --glass-border: 160 60% 25%;
+
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 180 100% 95%;
+    --sidebar-primary: 160 100% 50%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 20% 12%;
+    --sidebar-accent-foreground: 180 100% 90%;
+    --sidebar-border: 160 40% 20%;
+    --sidebar-ring: 160 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background: hsl(160 100% 50% / 0.3);
+    color: hsl(180 100% 95%);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(220 20% 4%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(160 100% 50% / 0.3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(160 100% 50% / 0.5);
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-glass/40 backdrop-blur-xl border border-glass-border/30;
+  }
+
+  .glass-strong {
+    @apply bg-glass/60 backdrop-blur-2xl border border-glass-border/40;
+  }
+
+  .neon-text {
+    color: hsl(var(--neon-green));
+    text-shadow: 0 0 10px hsl(var(--neon-green) / 0.5), 0 0 40px hsl(var(--neon-green) / 0.2);
+  }
+
+  .neon-text-cyan {
+    color: hsl(var(--neon-cyan));
+    text-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.5), 0 0 40px hsl(var(--neon-cyan) / 0.2);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 15px hsl(var(--neon-green) / 0.3), 0 0 45px hsl(var(--neon-green) / 0.1), inset 0 0 15px hsl(var(--neon-green) / 0.05);
+  }
+
+  .neon-glow-cyan {
+    box-shadow: 0 0 15px hsl(var(--neon-cyan) / 0.3), 0 0 45px hsl(var(--neon-cyan) / 0.1);
+  }
+
+  .neon-border {
+    border-color: hsl(var(--neon-green) / 0.4);
+  }
+
+  .hover-neon-glow {
+    @apply transition-all duration-300;
+  }
+  .hover-neon-glow:hover {
+    box-shadow: 0 0 20px hsl(var(--neon-green) / 0.4), 0 0 60px hsl(var(--neon-green) / 0.15);
+    border-color: hsl(var(--neon-green) / 0.6);
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold font-display tracking-tight;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-neon-purple;
+  }
+}
+
+/* Matrix rain canvas */
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* Scanline overlay */
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    hsl(160 100% 50% / 0.015) 2px,
+    hsl(160 100% 50% / 0.015) 4px
+  );
+}
+
+/* Three.js Background */
+.three-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.three-background canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}

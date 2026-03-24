@@ -29,7 +29,7 @@ const projects = [
     description: "A clean, responsive task management app with CRUD operations, local storage persistence, priority sorting, and a sleek UI for organizing daily tasks efficiently.",
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Parthu214",
-    demo: "#",
+    demo: "https://todo-list-webui.onrender.com",
     year: "2024",
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     description: "Responsive portfolio to showcase professional projects and certifications with SEO optimizations and cross-device compatibility.",
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Parthu214",
-    demo: "#",
+    demo: "https://personal-portfolio-cyan-sigma.vercel.app/",
     year: "2024",
   },
 ];

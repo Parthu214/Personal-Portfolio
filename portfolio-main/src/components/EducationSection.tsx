@@ -64,7 +64,7 @@ const EducationSection = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-display font-semibold text-lg text-foreground">
-                    Intermediate (+2) — MPC (Maths, Physics, Chemistry)
+                    HSC — MPC (Maths, Physics, Chemistry)
                   </h3>
                   <p className="text-accent font-mono text-sm mt-1">Sri Chaitanya Junior College</p>
                   <p className="text-muted-foreground text-sm mt-1">2021 — 2023 | Marks: 975/1000</p>

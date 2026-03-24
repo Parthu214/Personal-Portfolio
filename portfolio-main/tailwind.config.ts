@@ -94,6 +94,14 @@ export default {
           "0%": { transform: "translateY(0)" },
           "100%": { transform: "translateY(40px)" },
         },
+        "text-shimmer": {
+          "0%, 100%": { backgroundPosition: "0%" },
+          "50%": { backgroundPosition: "100%" },
+        },
+        bounce: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -101,6 +109,8 @@ export default {
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
         float: "float 6s ease-in-out infinite",
         "grid-move": "grid-move 3s linear infinite",
+        "text-shimmer": "text-shimmer 3s ease-in-out infinite",
+        bounce: "bounce 2s ease-in-out infinite",
       },
     },
   },

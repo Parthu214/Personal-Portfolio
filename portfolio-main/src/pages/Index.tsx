@@ -9,12 +9,12 @@ import ExperienceSection from "@/components/ExperienceSection";
 import AchievementsSection from "@/components/AchievementsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import ThreeBackground from "@/components/ThreeBackground";
+import CalmBackground from "@/components/CalmBackground";
 
 const Index = () => {
   return (
     <div className="relative min-h-screen">
-      <ThreeBackground />
+      <CalmBackground />
       <div className="scanline-overlay" />
       <Navbar />
       <main className="relative z-10">

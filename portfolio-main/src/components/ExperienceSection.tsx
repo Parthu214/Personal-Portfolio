@@ -17,12 +17,12 @@ const experiences = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-24 px-4">
+    <section id="internship" className="min-h-screen flex items-center justify-center px-4 py-24">
       <div className="container mx-auto max-w-4xl">
         <SectionReveal>
           <h2 className="section-heading neon-text mb-2">
             <span className="text-primary/40 font-mono text-lg mr-2">05.</span>
-            Experience
+            Internship
           </h2>
           <div className="h-px bg-gradient-to-r from-primary/50 to-transparent mb-10 max-w-xs" />
         </SectionReveal>

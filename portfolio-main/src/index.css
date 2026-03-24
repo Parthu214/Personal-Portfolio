@@ -5,32 +5,33 @@
 
 @layer base {
   :root {
-    --background: 220 20% 4%;
-    --foreground: 180 100% 95%;
+    /* Professional Dark Theme Background */
+    --background: 217 32% 6%;
+    --foreground: 210 40% 96%;
 
-    --card: 220 20% 8%;
-    --card-foreground: 180 100% 95%;
+    --card: 217 32% 10%;
+    --card-foreground: 210 40% 96%;
 
-    --popover: 220 20% 8%;
-    --popover-foreground: 180 100% 95%;
+    --popover: 217 32% 10%;
+    --popover-foreground: 210 40% 96%;
 
     --primary: 160 100% 50%;
-    --primary-foreground: 220 20% 4%;
+    --primary-foreground: 217 32% 6%;
 
-    --secondary: 220 20% 12%;
-    --secondary-foreground: 180 100% 90%;
+    --secondary: 217 32% 14%;
+    --secondary-foreground: 210 40% 92%;
 
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 217 32% 18%;
+    --muted-foreground: 217 20% 60%;
 
     --accent: 195 100% 50%;
-    --accent-foreground: 220 20% 4%;
+    --accent-foreground: 217 32% 6%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 160 40% 20%;
-    --input: 220 20% 15%;
+    --border: 160 40% 25%;
+    --input: 217 32% 14%;
     --ring: 160 100% 50%;
 
     --radius: 0.75rem;
@@ -38,17 +39,59 @@
     --neon-green: 160 100% 50%;
     --neon-cyan: 195 100% 50%;
     --neon-purple: 270 100% 65%;
-    --glass: 220 20% 10%;
-    --glass-border: 160 60% 25%;
+    --glass: 217 32% 12%;
+    --glass-border: 160 60% 30%;
 
-    --sidebar-background: 220 20% 6%;
-    --sidebar-foreground: 180 100% 95%;
+    --sidebar-background: 217 32% 8%;
+    --sidebar-foreground: 210 40% 96%;
     --sidebar-primary: 160 100% 50%;
-    --sidebar-primary-foreground: 220 20% 4%;
-    --sidebar-accent: 220 20% 12%;
-    --sidebar-accent-foreground: 180 100% 90%;
-    --sidebar-border: 160 40% 20%;
+    --sidebar-primary-foreground: 217 32% 6%;
+    --sidebar-accent: 217 32% 14%;
+    --sidebar-accent-foreground: 210 40% 92%;
+    --sidebar-border: 160 40% 25%;
     --sidebar-ring: 160 100% 50%;
+  }
+
+  /* Optional Light Mode - uncomment to enable */
+  @media (prefers-color-scheme: light) {
+    /* :root {
+      --background: 0 0% 97%;
+      --foreground: 217 32% 12%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 217 32% 12%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 217 32% 12%;
+
+      --primary: 160 100% 45%;
+      --primary-foreground: 0 0% 100%;
+
+      --secondary: 0 0% 95%;
+      --secondary-foreground: 217 32% 20%;
+
+      --muted: 0 0% 90%;
+      --muted-foreground: 217 20% 45%;
+
+      --accent: 195 100% 45%;
+      --accent-foreground: 0 0% 100%;
+
+      --border: 217 32% 85%;
+      --input: 0 0% 100%;
+      --ring: 160 100% 45%;
+
+      --glass: 0 0% 98%;
+      --glass-border: 217 32% 80%;
+
+      --sidebar-background: 0 0% 98%;
+      --sidebar-foreground: 217 32% 12%;
+      --sidebar-primary: 160 100% 45%;
+      --sidebar-primary-foreground: 0 0% 100%;
+      --sidebar-accent: 0 0% 95%;
+      --sidebar-accent-foreground: 217 32% 20%;
+      --sidebar-border: 217 32% 85%;
+      --sidebar-ring: 160 100% 45%;
+    } */
   }
 }
 
@@ -59,6 +102,22 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    background: linear-gradient(135deg, hsl(217 32% 6%) 0%, hsl(220 35% 8%) 25%, hsl(224 32% 7%) 50%, hsl(216 30% 9%) 75%, hsl(217 32% 6%) 100%);
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 20% 50%, rgba(160, 255, 200, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(100, 200, 255, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -67,21 +126,21 @@
 
   ::selection {
     background: hsl(160 100% 50% / 0.3);
-    color: hsl(180 100% 95%);
+    color: hsl(210 40% 96%);
   }
 
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: hsl(220 20% 4%);
+    background: hsl(217 32% 8%);
   }
   ::-webkit-scrollbar-thumb {
-    background: hsl(160 100% 50% / 0.3);
-    border-radius: 3px;
+    background: linear-gradient(180deg, hsl(160 100% 50% / 0.4), hsl(195 100% 50% / 0.3));
+    border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(160 100% 50% / 0.5);
+    background: linear-gradient(180deg, hsl(160 100% 50% / 0.6), hsl(195 100% 50% / 0.5));
   }
 }
 
@@ -176,4 +235,368 @@
   display: block;
   width: 100% !important;
   height: 100% !important;
+}
+
+/* ===== CALM BACKGROUND STYLES ===== */
+.calm-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Animated Blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  filter: blur(80px);
+  will-change: transform;
+  mix-blend-mode: screen;
+}
+
+.blob-1 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle at 30% 30%, rgba(34, 211, 238, 0.3), rgba(59, 130, 246, 0.05));
+  top: -150px;
+  right: -200px;
+  animation: float1 12s ease-in-out infinite;
+}
+
+.blob-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at 40% 60%, rgba(168, 85, 247, 0.25), rgba(99, 102, 241, 0.03));
+  bottom: -100px;
+  left: -150px;
+  animation: float2 15s ease-in-out infinite;
+}
+
+.blob-3 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.2), rgba(30, 144, 255, 0.01));
+  top: 40%;
+  left: 45%;
+  animation: float3 18s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@keyframes float1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.05);
+  }
+  66% {
+    transform: translate(-30px, 40px) scale(0.95);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-60px, 40px) scale(1.08);
+  }
+}
+
+@keyframes float3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(0, -50px) scale(1.1);
+  }
+}
+
+/* Grid Pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(34, 211, 238, 0.05) 25%, rgba(34, 211, 238, 0.05) 26%, transparent 27%, transparent 74%, rgba(34, 211, 238, 0.05) 75%, rgba(34, 211, 238, 0.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(34, 211, 238, 0.05) 25%, rgba(34, 211, 238, 0.05) 26%, transparent 27%, transparent 74%, rgba(34, 211, 238, 0.05) 75%, rgba(34, 211, 238, 0.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  background-position: 0 0;
+}
+
+/* ===== HERO SECTION ANIMATIONS ===== */
+
+/* Text Shimmer Effect */
+@keyframes text-shimmer {
+  0%, 100% {
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-position: 0%;
+  }
+  50% {
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-position: 100%;
+  }
+}
+
+.animate-text-shimmer {
+  animation: text-shimmer 3s ease-in-out infinite;
+  background-size: 200% 100%;
+}
+
+/* Name Glow Trail Effect */
+@keyframes name-glow-trail {
+  0%, 100% {
+    opacity: 0.3;
+    filter: blur(8px);
+  }
+  50% {
+    opacity: 0.5;
+    filter: blur(6px);
+  }
+}
+
+/* Light reflection effect for name */
+@keyframes light-reflection {
+  0%, 100% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+}
+
+.name-glow-effect {
+  position: relative;
+  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.3)) drop-shadow(0 0 20px rgba(59, 130, 246, 0.15));
+}
+
+.name-glow-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: light-reflection 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Fade Animation */
+@keyframes fade {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-fade {
+  animation: fade 1.5s ease-in-out infinite;
+}
+
+/* Pulse Glow */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(34, 211, 238, 0.5), 0 0 15px rgba(34, 211, 238, 0.2);
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.7), 0 0 25px rgba(34, 211, 238, 0.3);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Smooth Transitions */
+@keyframes soft-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.2), 0 0 40px rgba(59, 130, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.4), 0 0 60px rgba(59, 130, 246, 0.2);
+  }
+}
+
+/* Premium Glass Effect */
+.glass-premium {
+  @apply bg-slate-900/40 backdrop-blur-xl border border-white/10;
+}
+
+/* Soft Button Glow */
+.btn-glow {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.btn-glow:hover::before {
+  left: 100%;
+}
+
+/* Typing Cursor Blink Animation */
+@keyframes blink {
+  0%, 49%, 100% {
+    opacity: 1;
+  }
+  50%, 99% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 0.8s infinite;
+}
+
+/* SMOOTH GRADIENT COLOR SHIFT ANIMATIONS - CONTINUOUS FLOW */
+
+/* Main name - smooth gradient shift */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+.animate-gradient-shift {
+  background-size: 200% 100%;
+  animation: gradient-shift 6s ease-in-out infinite;
+}
+
+/* Delayed version for glow effect */
+.animate-gradient-shift-delay {
+  background-size: 200% 100%;
+  animation: gradient-shift 6s ease-in-out infinite 2s;
+}
+
+/* Smooth version for full name with proper background setup */
+@keyframes gradient-shift-smooth {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+.animate-gradient-shift-smooth {
+  background-size: 200% 100%;
+  animation: gradient-shift-smooth 7s ease-in-out infinite;
+}
+
+/* FLOATING 3D SQUARES ANIMATION */
+
+.floating-square {
+  position: absolute;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  border-right: 1px solid rgba(168, 85, 247, 0.5);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.5);
+  border-radius: 2px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(168, 85, 247, 0.06));
+  backdrop-filter: blur(8px);
+  box-shadow: 
+    0 0 15px rgba(34, 211, 238, 0.15),
+    inset 0 0 15px rgba(34, 211, 238, 0.08);
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: -10;
+}
+
+/* Floating upward animation with slow rotation - visible on scroll */
+@keyframes float-up-3d {
+  0% {
+    transform: translateY(0px) rotateX(10deg) rotateY(15deg) rotateZ(-5deg) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.2;
+    transform: translateY(-200px) rotateX(12deg) rotateY(10deg) rotateZ(0deg) scale(0.98);
+  }
+  100% {
+    transform: translateY(-400px) rotateX(15deg) rotateY(-15deg) rotateZ(5deg) scale(0.95);
+    opacity: 0;
+  }
+}
+
+/* FLOATING SQUARE ANIMATIONS - STAGGER FADE-IN + CONTINUOUS FLOAT */
+
+/* Staggered fade-in animation - brings opacity from 0 to 0.2 over 0.6s */
+@keyframes square-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+}
+
+/* Continuous floating animation with drift and rotation - runs after fade-in */
+@keyframes square-float {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-30px) translateX(12px) rotate(4deg);
+  }
+  50% {
+    transform: translateY(-60px) translateX(0px) rotate(8deg);
+  }
+  75% {
+    transform: translateY(-30px) translateX(-12px) rotate(4deg);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+}
+
+/* Styling for floating squares */
+.floating-square {
+  position: fixed;
+  border: 1.5px solid rgba(34, 211, 238, 0.5);
+  border-right: 1.5px solid rgba(168, 85, 247, 0.6);
+  border-bottom: 1.5px solid rgba(168, 85, 247, 0.6);
+  border-radius: 4px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(168, 85, 247, 0.06));
+  backdrop-filter: blur(8px);
+  box-shadow: 
+    0 0 20px rgba(34, 211, 238, 0.25),
+    inset 0 0 15px rgba(34, 211, 238, 0.1);
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+/* Active state - applies both fade-in and floating animations */
+.floating-square.active {
+  animation: 
+    square-fade-in 0.6s ease-out var(--fade-delay, 0s) forwards,
+    square-float var(--float-duration, 15s) linear var(--float-delay, 0.6s) infinite;
 }
